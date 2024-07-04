@@ -8,6 +8,7 @@ dotenv.config();
 // GET /auth/github
 router.get("/github", passport.authenticate("github"));
 
+// GET /auth/github/callback
 router.get(
   "/github/callback",
   passport.authenticate("github", {
