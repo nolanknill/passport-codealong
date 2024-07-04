@@ -23,6 +23,8 @@ const app = express();
 const PORT = process.env.PORT || 5050;
 
 import authRoutes from "./routes/auth.js";
+import postsRoutes from "./routes/posts.js";
+
 
 // Import .env files for environment variables (keys and secrets)
 import dotenv from "dotenv";
@@ -124,6 +126,7 @@ passport.deserializeUser((userId, done) => {
 });
 
 app.use('/auth', authRoutes);
+app.use('/posts', postsRoutes);
 
 app.listen(PORT, () => {
     console.log(`🚀 Server listening on port ${PORT}.`);
