@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "knex migrate:latest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "casual": "^1.6.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "helmet": "^7.1.0",
+    "knex": "^3.1.0",
+    "mysql2": "^3.10.2",
+    "passport": "^0.7.0",
+    "passport-github2": "^0.1.12"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
