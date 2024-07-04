@@ -16,11 +16,13 @@ const GitHubStrategy = passportGitHub.Strategy;
 
 // Knex instance
 import createKnex from "knex";
-import knexFile from "../knexfile.js";
+import knexFile from "./knexfile.js";
 const knex = createKnex(knexFile);
 
 const app = express();
 const PORT = process.env.PORT || 5050;
+
+import authRoutes from "./routes/auth.js";
 
 // Import .env files for environment variables (keys and secrets)
 import dotenv from "dotenv";
@@ -120,3 +122,9 @@ passport.deserializeUser((userId, done) => {
       console.log("Error finding user", err);
     });
 });
+
+app.use('/auth', authRoutes);
+
+app.listen(PORT, () => {
+    console.log(`🚀 Server listening on port ${PORT}.`);
+})
